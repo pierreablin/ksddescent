@@ -1,0 +1,4 @@
+numpy>=1.15
+scipy
+torch>=1.7
+matplotlib
