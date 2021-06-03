@@ -25,6 +25,7 @@ def test_output(algo, n, p):
 @pytest.mark.parametrize('algo', ['lbfgs', 'gradient'])
 def test_gaussian(algo):
     torch.manual_seed(0)
+
     def score(x):
         return - x
     max_iter = 300

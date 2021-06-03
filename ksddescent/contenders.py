@@ -69,8 +69,8 @@ def gaussian_kernel(x, y, sigma):
     return torch.exp(- dists / sigma / 2)
 
 
-
-def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12, store=False):
+def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
+              store=False):
     '''
     Parameters
     ----------
@@ -111,7 +111,9 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12, store=False):
                 self.timer.append(time() - self.t0)
 
             def get_output(self):
-                storage = [torch.tensor(x.reshape(n_samples, p), dtype=torch.float32) for x in self.mem]
+                storage = [torch.tensor(x.reshape(n_samples, p),
+                                        dtype=torch.float32)
+                           for x in self.mem]
                 return storage, self.timer
         callback = callback_store()
     else:
@@ -128,11 +130,12 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12, store=False):
         grad = x.grad
         return loss.item(), np.float64(grad.numpy().ravel())
 
-
     t0 = time()
-    x, f, d = fmin_l_bfgs_b(loss_and_grad, x.ravel(), maxiter=max_iter, factr=tol, epsilon=1e-12, pgtol=1e-10,
+    x, f, d = fmin_l_bfgs_b(loss_and_grad, x.ravel(), maxiter=max_iter,
+                            factr=tol, epsilon=1e-12, pgtol=1e-10,
                             callback=callback)
-    print('Took %.2f sec, %d iterations, loss = %.2e' % (time() - t0, d['nit'], f))
+    print('Took %.2f sec, %d iterations, loss = %.2e' %
+          (time() - t0, d['nit'], f))
     output = torch.tensor(x.reshape(n_samples, p), dtype=torch.float32)
     if store:
         storage, timer = callback.get_output()

@@ -1,14 +1,14 @@
 import torch
 import numpy as np
-from .kernels import (gaussian_stein_kernel, imq_kernel,
-                      gaussian_stein_kernel_single, linear_stein_kernel)
+from .kernels import (imq_kernel, gaussian_stein_kernel_single,
+                      linear_stein_kernel)
 
 from scipy.optimize import fmin_l_bfgs_b
 from time import time
 
 
-def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1, store=False,
-                  verbose=False, clamp=None, beta=0.2):
+def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
+                  store=False, verbose=False, clamp=None, beta=0.2):
     '''
     Parameters
     ----------
@@ -35,7 +35,8 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1, store
         wether to print the current loss
 
     clamp:
-        if not None, should be a tuple (a, b). The points x are then constrained to stay in [a, b]
+        if not None, should be a tuple (a, b). The points x are then
+        constrained to stay in [a, b]
 
     Returns
     -------
@@ -85,9 +86,9 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1, store
         return x
 
 
-
-def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1., max_iter=10000, tol=1e-12,
-                beta=.5, store=False, verbose=False):
+def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1.,
+               max_iter=10000, tol=1e-12, beta=.5,
+               store=False, verbose=False):
     '''
     Parameters
     ----------
@@ -137,7 +138,9 @@ def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1., max_iter=10000, tol=1e-12,
                 self.timer.append(time() - self.t0)
 
             def get_output(self):
-                storage = [torch.tensor(x.reshape(n_samples, p), dtype=torch.float32) for x in self.mem]
+                storage = [torch.tensor(x.reshape(n_samples, p),
+                                        dtype=torch.float32)
+                           for x in self.mem]
                 return storage, self.timer
         callback = callback_store()
     else:
@@ -159,12 +162,13 @@ def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1., max_iter=10000, tol=1e-12,
         grad = x.grad
         return loss.item(), np.float64(grad.numpy().ravel())
 
-
     t0 = time()
-    x, f, d = fmin_l_bfgs_b(loss_and_grad, x.ravel(), maxiter=max_iter, factr=tol, epsilon=1e-12, pgtol=1e-10,
+    x, f, d = fmin_l_bfgs_b(loss_and_grad, x.ravel(), maxiter=max_iter,
+                            factr=tol, epsilon=1e-12, pgtol=1e-10,
                             callback=callback)
     if verbose:
-        print('Took %.2f sec, %d iterations, loss = %.2e' % (time() - t0, d['nit'], f))
+        print('Took %.2f sec, %d iterations, loss = %.2e' %
+              (time() - t0, d['nit'], f))
     output = torch.tensor(x.reshape(n_samples, p), dtype=torch.float32)
     if store:
         storage, timer = callback.get_output()
