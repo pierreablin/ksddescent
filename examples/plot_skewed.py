@@ -51,7 +51,7 @@ variances = [.5, .3, .1]
 weights = [.5, .5, .5]
 score, potential, sampler = make_mog(centers, variances, weights)
 
-n_samples = 200
+n_samples = 40
 p = 2
 
 

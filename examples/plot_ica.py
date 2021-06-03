@@ -66,7 +66,7 @@ def one_expe(n, p, sigma, bw, n_samples):
 
 
 p_list = [2]
-n = 1000
+n = 50
 sigma = 1
 bw = .1
 n_samples = 10
