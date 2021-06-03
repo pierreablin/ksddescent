@@ -1,13 +1,13 @@
 """
-===========
-Placeholder
-===========
+==================================
+Different algorithms on a Gaussian
+==================================
 """  # noqa
 import torch
 import math
 from torch.optim import SGD
 from ksddescent import ksdd_lbfgs, ksdd_gradient
-from ksddescent.contenders import svgd_pytorch, mmd_lbfgs
+from ksddescent.contenders import svgd, mmd_lbfgs
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -34,7 +34,7 @@ x = 1.5 + torch.randn(n_samples, p) / 3
 bw = .1
 x_ksd, ksd_traj, _ = ksdd_lbfgs(x.clone(), score, bw=bw, store=True)
 x_grad, grad_traj, _ = ksdd_gradient(x.clone(), score, .3,  bw=bw, store=True)
-x_svgd, svgd_traj, _ = svgd_pytorch(x.clone(), score, .5, bw=bw, store=True, verbose=True)
+x_svgd, svgd_traj, _ = svgd(x.clone(), score, .5, bw=bw, store=True, verbose=True)
 x_mmd, mmd_traj, _ = mmd_lbfgs(x.clone(), sampler(3 * n_samples), bw=bw, store=True)
 
 labels = ['KSD L-BFGS', 'KSD Grad', 'SVGD', 'MMD']

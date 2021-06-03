@@ -4,7 +4,7 @@ from time import time
 from scipy.optimize import fmin_l_bfgs_b
 
 
-def svgd_pytorch(x0, score, step, n_iter=1000, bw=1, verbose=False,
+def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
                  store=False):
     '''
     Parameters

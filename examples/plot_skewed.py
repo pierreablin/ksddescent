@@ -1,12 +1,12 @@
 """
-===========
-Placeholder
-===========
+==============================
+Unbalanced mixture of Gaussian
+==============================
 """  # noqa
 import torch
 from torch.optim import SGD
 from ksddescent import ksdd_lbfgs, ksdd_gradient
-from ksddescent.contenders import svgd_pytorch, mmd_lbfgs
+from ksddescent.contenders import svgd, mmd_lbfgs
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
@@ -51,7 +51,7 @@ variances = [.5, .3, .1]
 weights = [.5, .5, .5]
 score, potential, sampler = make_mog(centers, variances, weights)
 
-n_samples = 40
+n_samples = 200
 p = 2
 
 

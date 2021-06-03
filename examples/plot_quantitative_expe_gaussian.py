@@ -1,12 +1,12 @@
 """
-===========
-Placeholder
-===========
+======================================
+Convergence speed of different methods
+======================================
 """  # noqa
 import torch
 from torch.optim import SGD
 from ksddescent import ksdd_lbfgs
-from ksddescent.contenders import svgd_pytorch
+from ksddescent.contenders import svgd
 from ksddescent.kernels import gaussian_stein_kernel_single
 import matplotlib.pyplot as plt
 import numpy as np
@@ -61,10 +61,10 @@ def one_expe(n_samples, bw, step_svgd, step_mmd):
     for step in step_svgd:
         print(step)
         t0 = time()
-        svgd_pytorch(x, score, step, n_iter=n_iters, bw=bw, verbose=True)
+        svgd(x, score, step, n_iter=n_iters, bw=bw, verbose=True)
         t_svgd = time() - t0
         t_svgds.append(t_svgd)
-        _, traj_svgd, _ = svgd_pytorch(x, score, step, n_iter=n_iters, bw=bw, store=True)
+        _, traj_svgd, _ = svgd(x, score, step, n_iter=n_iters, bw=bw, store=True)
         traj_svgds.append(traj_svgd)
     true_samples = sampler(10000)
     kl_ksd = [kl(x[:, 0], true_samples) for x in traj_ksd]

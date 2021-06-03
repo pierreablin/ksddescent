@@ -1,7 +1,7 @@
 """
-===========
-Placeholder
-===========
+===================
+Effect of annealing
+===================
 """  # noqa
 import torch
 from torch.optim import SGD

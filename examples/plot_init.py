@@ -1,7 +1,7 @@
 """
-===========
-Placeholder
-===========
+================================
+Dependence to the initialization
+================================
 """  # noqa
 import torch
 from ksddescent import ksdd_lbfgs
