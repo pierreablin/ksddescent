@@ -1,5 +1,6 @@
 numpydoc
 torch
+matplotlib
 pillow
 scikit-learn >=0.18
 sphinx-bootstrap-theme
