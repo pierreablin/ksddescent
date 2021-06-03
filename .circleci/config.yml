@@ -62,7 +62,7 @@ jobs:
             name: Check installation
             command: |
               which python
-              python -c "import ksd descent"
+              python -c "import ksddescent"
 
         # Build docs
         - run:
