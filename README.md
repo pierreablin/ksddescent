@@ -17,6 +17,7 @@ pip install -e .
 
 This will install the package and all its dependencies, listed in `requirements.txt`.
 
+
 ## Reproducing the figures of the paper
 
 To run the ICA experiment, run
