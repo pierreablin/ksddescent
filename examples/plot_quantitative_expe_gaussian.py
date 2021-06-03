@@ -1,6 +1,11 @@
+"""
+===========
+Placeholder
+===========
+"""  # noqa
 import torch
 from torch.optim import SGD
-from ksddescent.ksddescent import ksdd_lbfgs
+from ksddescent import ksdd_lbfgs
 from ksddescent.contenders import svgd_pytorch
 from ksddescent.kernels import gaussian_stein_kernel_single
 import matplotlib.pyplot as plt

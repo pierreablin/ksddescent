@@ -40,6 +40,8 @@ if __name__ == "__main__":
           license=LICENSE,
           version=find_version(),
           download_url=DOWNLOAD_URL,
+          long_description=open('README.md').read(),
+          long_description_content_type='text/markdown',
           classifiers=[
               'Intended Audience :: Science/Research',
               'Intended Audience :: Developers',
