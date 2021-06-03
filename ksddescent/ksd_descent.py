@@ -8,7 +8,7 @@ from time import time
 
 
 def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1, store=False,
-              verbose=False, clamp=None, beta=0.2):
+                  verbose=False, clamp=None, beta=0.2):
     '''
     Parameters
     ----------
@@ -78,6 +78,7 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1, store
                 x = x.clamp(clamp[0], clamp[1])
             x.grad.data.zero_()
         x.requires_grad = True
+    x.requires_grad = False
     if store:
         return x, storage, timer
     else:
