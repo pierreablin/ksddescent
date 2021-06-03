@@ -22,7 +22,6 @@ jobs:
           channels: conda-forge
       - name: Installations
         run: |
-          sudo apt-get install octave
           conda --version
           which python
           python setup.py install
