@@ -18,9 +18,9 @@
 .. _sphx_glr_auto_examples_plot_skewed.py:
 
 
-===========
-Placeholder
-===========
+==============================
+Unbalanced mixture of Gaussian
+==============================
 
 .. GENERATED FROM PYTHON SOURCE LINES 6-98
 
@@ -74,7 +74,7 @@ Placeholder
     import torch
     from torch.optim import SGD
     from ksddescent import ksdd_lbfgs, ksdd_gradient
-    from ksddescent.contenders import svgd_pytorch, mmd_lbfgs
+    from ksddescent.contenders import svgd, mmd_lbfgs
     import seaborn as sns
     import matplotlib.pyplot as plt
     import numpy as np
@@ -119,7 +119,7 @@ Placeholder
     weights = [.5, .5, .5]
     score, potential, sampler = make_mog(centers, variances, weights)
 
-    n_samples = 40
+    n_samples = 200
     p = 2
 
 
@@ -167,7 +167,7 @@ Placeholder
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.409 seconds)
+   **Total running time of the script:** ( 0 minutes  44.092 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_skewed.py:

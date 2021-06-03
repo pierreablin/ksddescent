@@ -1,7 +1,7 @@
 """
-===========
-Placeholder
-===========
+======================================
+Structure of the minima of KSD descent
+======================================
 """  # noqa
 import torch
 from torch.optim import SGD

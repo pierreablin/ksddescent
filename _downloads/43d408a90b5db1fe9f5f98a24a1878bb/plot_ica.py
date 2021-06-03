@@ -1,12 +1,12 @@
 """
-===========
-Placeholder
-===========
+=======================================
+Bayesian Independent Component Analysis
+=======================================
 """  # noqa
 import torch
 from torch.optim import SGD
 from ksddescent import ksdd_lbfgs
-from ksddescent.contenders import svgd_pytorch
+from ksddescent.contenders import svgd
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -52,7 +52,7 @@ def one_expe(n, p, sigma, bw, n_samples):
 
     x = torch.randn(n_samples, p ** 2)
     x_final = ksdd_lbfgs(x.clone(), score, bw=bw)
-    x_svgd = svgd_pytorch(x.clone(), score, 0.1, bw=bw, n_iter=3000)
+    x_svgd = svgd(x.clone(), score, 0.1, bw=bw, n_iter=3000)
     score_svgd = torch.norm(score(x_svgd)).item()
     score_final = torch.norm(score(x_final)).item()
     score_random = torch.norm(score(x)).item()
@@ -66,7 +66,7 @@ def one_expe(n, p, sigma, bw, n_samples):
 
 
 p_list = [2]
-n = 50
+n = 1000
 sigma = 1
 bw = .1
 n_samples = 10

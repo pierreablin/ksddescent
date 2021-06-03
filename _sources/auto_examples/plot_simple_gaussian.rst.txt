@@ -18,9 +18,9 @@
 .. _sphx_glr_auto_examples_plot_simple_gaussian.py:
 
 
-===========
-Placeholder
-===========
+==================================
+Different algorithms on a Gaussian
+==================================
 
 .. GENERATED FROM PYTHON SOURCE LINES 6-72
 
@@ -60,17 +60,17 @@ Placeholder
 
  .. code-block:: none
 
-    0 17.494171142578125
-    100 0.006752825807780027
-    200 0.0034019462764263153
-    300 0.0020240473095327616
-    400 0.0014534270158037543
-    500 0.0011101968120783567
-    600 0.0008695889264345169
-    700 0.0006956137949600816
-    800 0.0005700429901480675
-    900 0.00047955315676517785
-    Took 0.29 sec, 164 iterations, loss = 5.67e+03
+    0 16.964630126953125
+    100 0.008105263113975525
+    200 0.003510755719617009
+    300 0.0020785811357200146
+    400 0.0014880601083859801
+    500 0.0011313374852761626
+    600 0.0008968400070443749
+    700 0.0007346394704654813
+    800 0.0006183189689181745
+    900 0.0005316480528563261
+    Took 0.38 sec, 160 iterations, loss = 5.34e+03
 
 
 
@@ -85,7 +85,7 @@ Placeholder
     import math
     from torch.optim import SGD
     from ksddescent import ksdd_lbfgs, ksdd_gradient
-    from ksddescent.contenders import svgd_pytorch, mmd_lbfgs
+    from ksddescent.contenders import svgd, mmd_lbfgs
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -112,7 +112,7 @@ Placeholder
     bw = .1
     x_ksd, ksd_traj, _ = ksdd_lbfgs(x.clone(), score, bw=bw, store=True)
     x_grad, grad_traj, _ = ksdd_gradient(x.clone(), score, .3,  bw=bw, store=True)
-    x_svgd, svgd_traj, _ = svgd_pytorch(x.clone(), score, .5, bw=bw, store=True, verbose=True)
+    x_svgd, svgd_traj, _ = svgd(x.clone(), score, .5, bw=bw, store=True, verbose=True)
     x_mmd, mmd_traj, _ = mmd_lbfgs(x.clone(), sampler(3 * n_samples), bw=bw, store=True)
 
     labels = ['KSD L-BFGS', 'KSD Grad', 'SVGD', 'MMD']
@@ -151,7 +151,7 @@ Placeholder
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.900 seconds)
+   **Total running time of the script:** ( 0 minutes  2.561 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_simple_gaussian.py:

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Computation times &#8212; ksddescent 0.1dev documentation</title>
+    <title>ksddescent.svgd &#8212; ksddescent 0.1dev documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="index.html">Examples</a></li>
+                <li><a href="../auto_examples/index.html">Examples</a></li>
                 <li><a href="../api.html">API</a></li>
                 <li><a href="https://github.com/pierreablin/ksddescent">GitHub</a></li>
             
@@ -72,7 +72,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Computation times</a></li>
+<li><a class="reference internal" href="#">ksddescent.svgd</a></li>
 </ul>
 </ul>
 </li>
@@ -84,7 +84,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/auto_examples/sg_execution_times.rst.txt"
+  <a href="../_sources/generated/ksddescent.svgd.rst.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -106,46 +106,39 @@
 
 <div class="container content-container">
   
-  <section id="computation-times">
-<span id="sphx-glr-auto-examples-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Permalink to this headline">¶</a></h1>
-<p><strong>01:12.283</strong> total execution time for <strong>auto_examples</strong> files:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 9%" />
-<col style="width: 6%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_skewed.html#sphx-glr-auto-examples-plot-skewed-py"><span class="std std-ref">Unbalanced mixture of Gaussian</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_skewed.py</span></code>)</p></td>
-<td><p>00:44.092</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="plot_ica.html#sphx-glr-auto-examples-plot-ica-py"><span class="std std-ref">Bayesian Independent Component Analysis</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_ica.py</span></code>)</p></td>
-<td><p>00:13.684</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_quantitative_expe_gaussian.html#sphx-glr-auto-examples-plot-quantitative-expe-gaussian-py"><span class="std std-ref">Convergence speed of different methods</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_quantitative_expe_gaussian.py</span></code>)</p></td>
-<td><p>00:07.362</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="plot_simple_gaussian.html#sphx-glr-auto-examples-plot-simple-gaussian-py"><span class="std std-ref">Different algorithms on a Gaussian</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_simple_gaussian.py</span></code>)</p></td>
-<td><p>00:02.561</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_minima.html#sphx-glr-auto-examples-plot-minima-py"><span class="std std-ref">Structure of the minima of KSD descent</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_minima.py</span></code>)</p></td>
-<td><p>00:02.278</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="plot_temperature.html#sphx-glr-auto-examples-plot-temperature-py"><span class="std std-ref">Effect of annealing</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_temperature.py</span></code>)</p></td>
-<td><p>00:01.747</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_init.html#sphx-glr-auto-examples-plot-init-py"><span class="std std-ref">Dependence to the initialization</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_init.py</span></code>)</p></td>
-<td><p>00:00.559</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="ksddescent-svgd">
+<h1>ksddescent.svgd<a class="headerlink" href="#ksddescent-svgd" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ksddescent.svgd">
+<span class="sig-prename descclassname"><span class="pre">ksddescent.</span></span><span class="sig-name descname"><span class="pre">svgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ksddescent.svgd" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x0</strong><span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>initial positions</p>
+</dd>
+<dt><strong>score</strong><span class="classifier">callable</span></dt><dd><p>function that computes the score</p>
+</dd>
+<dt><strong>step</strong><span class="classifier">float</span></dt><dd><p>step size</p>
+</dd>
+<dt><strong>n_iter</strong><span class="classifier">int</span></dt><dd><p>max numer of iters</p>
+</dd>
+<dt><strong>bw</strong><span class="classifier">float</span></dt><dd><p>bandwidth of the stein kernel</p>
+</dd>
+<dt><strong>store</strong><span class="classifier">bool</span></dt><dd><p>whether to stores the iterates</p>
+</dd>
+<dt><strong>verbose: bool</strong></dt><dd><p>wether to print the current loss</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>x: torch.tensor</dt><dd><p>The final positions</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

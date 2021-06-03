@@ -1,0 +1,6 @@
+﻿ksddescent.svgd
+===============
+
+.. currentmodule:: ksddescent
+
+.. autofunction:: svgd

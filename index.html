@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>KSD Descent &#8212; ksddescent 0.1dev documentation</title>
+    <title>Kernel Stein Discrepancy Descent &#8212; ksddescent 0.1dev documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
@@ -72,7 +72,13 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">KSD Descent</a></li>
+<li><a class="reference internal" href="#">Kernel Stein Discrepancy Descent</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#reference">Reference</a></li>
+<li><a class="reference internal" href="#bug-reports">Bug reports</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -106,9 +112,46 @@
 
 <div class="container content-container">
   
-  <section id="ksd-descent">
-<h1>KSD Descent<a class="headerlink" href="#ksd-descent" title="Permalink to this headline">¶</a></h1>
-<p>KSD descent rules</p>
+  <section id="kernel-stein-discrepancy-descent">
+<h1>Kernel Stein Discrepancy Descent<a class="headerlink" href="#kernel-stein-discrepancy-descent" title="Permalink to this headline">¶</a></h1>
+<p>Sampling by optimization of the Kernel Stein Discrepancy</p>
+<p>The paper is available at <a class="reference external" href="https://arxiv.org/abs/2105.09994">https://arxiv.org/abs/2105.09994</a>.</p>
+<p>The code uses Pytorch.</p>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p>The code is available on pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install ksddescent
+</pre></div>
+</div>
+<p>The github repository is at <a class="reference external" href="https://github.com/pierreablin/ksddescent">github.com/pierreablin/ksddescent</a></p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The main function is <cite>ksdd_lbfgs</cite>, which uses the fast L-BFGS algorithm to converge quickly.
+It takes as input the initial position of the particles, and the score function.
+For instance, to samples from a Gaussian (where the score is identity), you can use these simple lines of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ksddescent</span> <span class="kn">import</span> <span class="n">ksdd_lbfgs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>  <span class="c1"># start from uniform distribution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">score</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>  <span class="c1"># simple score function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ksdd_lbfgs</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>  <span class="c1"># run the algorithm</span>
+</pre></div>
+</div>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>If you use this code in your project, please cite:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Anna</span> <span class="n">Korba</span><span class="p">,</span> <span class="n">Pierre</span><span class="o">-</span><span class="n">Cyril</span> <span class="n">Aubin</span><span class="p">,</span> <span class="n">Simon</span> <span class="n">Majewski</span><span class="p">,</span> <span class="n">Pierre</span> <span class="n">Ablin</span>
+<span class="n">Kernel</span> <span class="n">Stein</span> <span class="n">Discrepancy</span> <span class="n">Descent</span>
+<span class="n">International</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Machine</span> <span class="n">Learning</span><span class="p">,</span> <span class="mi">2021</span>
+</pre></div>
+</div>
+</section>
+<section id="bug-reports">
+<h2>Bug reports<a class="headerlink" href="#bug-reports" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference external" href="https://github.com/pierreablin/ksddescent/issues">github issue tracker</a> to report bugs.</p>
+</section>
 </section>
 
 

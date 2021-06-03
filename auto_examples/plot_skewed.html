@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Placeholder &#8212; ksddescent 0.1dev documentation</title>
+    <title>Unbalanced mixture of Gaussian &#8212; ksddescent 0.1dev documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -72,7 +72,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Placeholder</a></li>
+<li><a class="reference internal" href="#">Unbalanced mixture of Gaussian</a></li>
 </ul>
 </ul>
 </li>
@@ -111,8 +111,8 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-skewed-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="placeholder">
-<span id="sphx-glr-auto-examples-plot-skewed-py"></span><h1>Placeholder<a class="headerlink" href="#placeholder" title="Permalink to this headline">¶</a></h1>
+<section class="sphx-glr-example-title" id="unbalanced-mixture-of-gaussian">
+<span id="sphx-glr-auto-examples-plot-skewed-py"></span><h1>Unbalanced mixture of Gaussian<a class="headerlink" href="#unbalanced-mixture-of-gaussian" title="Permalink to this headline">¶</a></h1>
 <img alt="plot skewed" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_skewed_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/.local/lib/python3.8/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap &#39;rocket&#39; which already exists.
@@ -147,7 +147,7 @@ to download the full example code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">SGD</span>
 <span class="kn">from</span> <span class="nn">ksddescent</span> <span class="kn">import</span> <a href="../generated/ksddescent.ksdd_lbfgs.html#ksddescent.ksdd_lbfgs" title="ksddescent.ksdd_lbfgs" class="sphx-glr-backref-module-ksddescent sphx-glr-backref-type-py-function"><span class="n">ksdd_lbfgs</span></a><span class="p">,</span> <span class="n">ksdd_gradient</span>
-<span class="kn">from</span> <span class="nn">ksddescent.contenders</span> <span class="kn">import</span> <span class="n">svgd_pytorch</span><span class="p">,</span> <span class="n">mmd_lbfgs</span>
+<span class="kn">from</span> <span class="nn">ksddescent.contenders</span> <span class="kn">import</span> <span class="n">svgd</span><span class="p">,</span> <span class="n">mmd_lbfgs</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -192,7 +192,7 @@ to download the full example code</p>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weights</span></a> <span class="o">=</span> <span class="p">[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">]</span>
 <span class="n">score</span><span class="p">,</span> <span class="n">potential</span><span class="p">,</span> <span class="n">sampler</span> <span class="o">=</span> <span class="n">make_mog</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">centers</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">variances</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">weights</span></a><span class="p">)</span>
 
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_samples</span></a> <span class="o">=</span> <span class="mi">40</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_samples</span></a> <span class="o">=</span> <span class="mi">200</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <span class="mi">2</span>
 
 
@@ -238,7 +238,7 @@ to download the full example code</p>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.409 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  44.092 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-skewed-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/8e53d7c2683661b3de30e65f9e9430bf/plot_skewed.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_skewed.py</span></code></a></p>

@@ -17,12 +17,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Different algorithms on a Gaussian">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simple_gaussian_thumb.png
-     :alt: Placeholder
+     :alt: Different algorithms on a Gaussian
 
      :ref:`sphx_glr_auto_examples_plot_simple_gaussian.py`
 
@@ -38,12 +38,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Effect of annealing">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_temperature_thumb.png
-     :alt: Placeholder
+     :alt: Effect of annealing
 
      :ref:`sphx_glr_auto_examples_plot_temperature.py`
 
@@ -59,12 +59,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Bayesian Independent Component Analysis">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_ica_thumb.png
-     :alt: Placeholder
+     :alt: Bayesian Independent Component Analysis
 
      :ref:`sphx_glr_auto_examples_plot_ica.py`
 
@@ -80,12 +80,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Dependence to the initialization">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_init_thumb.png
-     :alt: Placeholder
+     :alt: Dependence to the initialization
 
      :ref:`sphx_glr_auto_examples_plot_init.py`
 
@@ -101,12 +101,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Unbalanced mixture of Gaussian">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_skewed_thumb.png
-     :alt: Placeholder
+     :alt: Unbalanced mixture of Gaussian
 
      :ref:`sphx_glr_auto_examples_plot_skewed.py`
 
@@ -122,12 +122,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Structure of the minima of KSD descent">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_minima_thumb.png
-     :alt: Placeholder
+     :alt: Structure of the minima of KSD descent
 
      :ref:`sphx_glr_auto_examples_plot_minima.py`
 
@@ -143,12 +143,12 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Placeholder">
+    <div class="sphx-glr-thumbcontainer" tooltip="Convergence speed of different methods">
 
 .. only:: html
 
  .. figure:: /auto_examples/images/thumb/sphx_glr_plot_quantitative_expe_gaussian_thumb.png
-     :alt: Placeholder
+     :alt: Convergence speed of different methods
 
      :ref:`sphx_glr_auto_examples_plot_quantitative_expe_gaussian.py`
 
