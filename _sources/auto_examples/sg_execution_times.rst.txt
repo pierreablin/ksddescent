@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**01:12.283** total execution time for **auto_examples** files:
+**01:32.314** total execution time for **auto_examples** files:
 
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_skewed.py` (``plot_skewed.py``)                                         | 00:44.092 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_skewed.py` (``plot_skewed.py``)                                         | 00:59.967 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_ica.py` (``plot_ica.py``)                                               | 00:13.684 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_ica.py` (``plot_ica.py``)                                               | 00:18.919 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_quantitative_expe_gaussian.py` (``plot_quantitative_expe_gaussian.py``) | 00:07.362 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_quantitative_expe_gaussian.py` (``plot_quantitative_expe_gaussian.py``) | 00:07.289 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_simple_gaussian.py` (``plot_simple_gaussian.py``)                       | 00:02.561 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_minima.py` (``plot_minima.py``)                                         | 00:02.190 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_minima.py` (``plot_minima.py``)                                         | 00:02.278 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_simple_gaussian.py` (``plot_simple_gaussian.py``)                       | 00:01.942 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_temperature.py` (``plot_temperature.py``)                               | 00:01.747 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_temperature.py` (``plot_temperature.py``)                               | 00:01.408 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_init.py` (``plot_init.py``)                                             | 00:00.559 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_init.py` (``plot_init.py``)                                             | 00:00.600 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
