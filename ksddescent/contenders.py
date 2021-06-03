@@ -1,12 +1,11 @@
 import numpy as np
 import torch
-import math
-import numpy as np
 from time import time
 from scipy.optimize import fmin_l_bfgs_b
 
 
-def svgd_pytorch(x0, score, step, n_iter=1000, bw=1, verbose=False, store=False):
+def svgd_pytorch(x0, score, step, n_iter=1000, bw=1, verbose=False,
+                 store=False):
     '''
     Parameters
     ----------
@@ -63,10 +62,11 @@ def svgd_pytorch(x0, score, step, n_iter=1000, bw=1, verbose=False, store=False)
         return x, storage, timer
     return x
 
+
 def gaussian_kernel(x, y, sigma):
-        d = (x[:, None, :] - y[None, :, :])
-        dists = (d ** 2).sum(axis=-1)
-        return torch.exp(- dists / sigma / 2)
+    d = (x[:, None, :] - y[None, :, :])
+    dists = (d ** 2).sum(axis=-1)
+    return torch.exp(- dists / sigma / 2)
 
 
 
