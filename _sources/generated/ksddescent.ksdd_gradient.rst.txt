@@ -1,0 +1,6 @@
+﻿ksddescent.ksdd\_gradient
+=========================
+
+.. currentmodule:: ksddescent
+
+.. autofunction:: ksdd_gradient
