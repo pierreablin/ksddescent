@@ -88,7 +88,6 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
     returns new samples by minimizing the maximum mean discrepancy.
     Parameters
     ----------
-
     x0 : torch.tensor, size n_samples x n_features
         initial positions
 
@@ -106,9 +105,13 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
 
     Returns
     -------
-
     x: torch.tensor
         The final positions
+
+    Reference
+    ---------
+    M.Arbel, A.Korba, A.Salim, A.Gretton. Maximum mean discrepancy
+    gradient flow, Neurips, 2020.
     '''
     x = x0.clone().detach().numpy()
     n_samples, p = x.shape

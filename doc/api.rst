@@ -17,3 +17,4 @@ Functions
    ksdd_gradient
    ksdd_lbfgs
    svgd
+   mmd_lbfgs
