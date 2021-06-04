@@ -4,12 +4,10 @@
 API Documentation
 =================
 
+Sampling methods
+================
+
 .. currentmodule:: ksddescent
-
-Kernel Stein Discrepancy Descent
-================================
-
-Functions
 
 .. autosummary::
    :toctree: generated/
