@@ -22,7 +22,7 @@
 Unbalanced mixture of Gaussian
 ==============================
 
-.. GENERATED FROM PYTHON SOURCE LINES 6-121
+.. GENERATED FROM PYTHON SOURCE LINES 6-119
 
 
 
@@ -42,9 +42,7 @@ Unbalanced mixture of Gaussian
     # License: MIT
 
     import torch
-    from ksddescent import ksdd_lbfgs, ksdd_gradient
-    from ksddescent.contenders import svgd, mmd_lbfgs
-    import seaborn as sns
+    from ksddescent import ksdd_lbfgs
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -155,7 +153,7 @@ Unbalanced mixture of Gaussian
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  20.874 seconds)
+   **Total running time of the script:** ( 4 minutes  52.611 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_skewed.py:

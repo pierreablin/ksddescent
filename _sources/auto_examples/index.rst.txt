@@ -59,6 +59,27 @@ Examples Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Unbalanced mixture of Gaussian">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_skewed_thumb.png
+     :alt: Unbalanced mixture of Gaussian
+
+     :ref:`sphx_glr_auto_examples_plot_skewed.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_skewed
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Bayesian Independent Component Analysis">
 
 .. only:: html
@@ -98,27 +119,6 @@ Examples Gallery
    :hidden:
 
    /auto_examples/plot_init
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Unbalanced mixture of Gaussian">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_skewed_thumb.png
-     :alt: Unbalanced mixture of Gaussian
-
-     :ref:`sphx_glr_auto_examples_plot_skewed.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_skewed
 
 .. raw:: html
 

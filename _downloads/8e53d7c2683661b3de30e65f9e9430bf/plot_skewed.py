@@ -9,9 +9,7 @@ Unbalanced mixture of Gaussian
 # License: MIT
 
 import torch
-from ksddescent import ksdd_lbfgs, ksdd_gradient
-from ksddescent.contenders import svgd, mmd_lbfgs
-import seaborn as sns
+from ksddescent import ksdd_lbfgs
 import matplotlib.pyplot as plt
 import numpy as np
 
