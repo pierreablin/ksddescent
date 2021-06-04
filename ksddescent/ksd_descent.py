@@ -52,8 +52,8 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
     loss_list : list of floats
         List of the loss values during iterations
 
-    Reference
-    ---------
+    References
+    ----------
     A.Korba, P-C. Aubin, S.Majewski, P.Ablin. Kernel Stein Discrepancy
     Descent, International Conference on Machine Learning, 2021.
     '''
@@ -135,8 +135,8 @@ def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1.,
     x: torch.tensor
         The final positions
 
-    Reference
-    ---------
+    References
+    ----------
     A.Korba, P-C. Aubin, S.Majewski, P.Ablin. Kernel Stein Discrepancy
     Descent, International Conference on Machine Learning, 2021.
     '''

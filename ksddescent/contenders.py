@@ -42,8 +42,8 @@ def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
     x: torch.tensor
         The final positions
 
-    Reference
-    ---------
+    References
+    ----------
     Q. Liu, D. Wang. Stein variational gradient descent: A general
     purpose Bayesian inference algorithm, Advances In Neural
     Information Processing Systems, 2370-2378
@@ -108,8 +108,8 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
     x: torch.tensor
         The final positions
 
-    Reference
-    ---------
+    References
+    ----------
     M.Arbel, A.Korba, A.Salim, A.Gretton. Maximum mean discrepancy
     gradient flow, Neurips, 2020.
     '''
