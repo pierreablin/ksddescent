@@ -114,31 +114,32 @@
 <span class="sig-prename descclassname"><span class="pre">ksddescent.</span></span><span class="sig-name descname"><span class="pre">mmd_lbfgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ksddescent.mmd_lbfgs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sampling by optimization of the MMD</p>
 <p>This uses target samples from a base distribution and
-returns new samples by minimizing the maximum mean discrepancy.
-Parameters
-———-
-x0 : torch.tensor, size n_samples x n_features</p>
-<blockquote>
-<div><p>initial positions</p>
-</div></blockquote>
-<dl class="simple">
-<dt>target_samples<span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>Samples from the target distribution</p>
+returns new samples by minimizing the maximum mean discrepancy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x0</strong><span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>initial positions</p>
 </dd>
-<dt>bw<span class="classifier">float</span></dt><dd><p>bandwidth of the stein kernel</p>
+<dt><strong>target_samples</strong><span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>Samples from the target distribution</p>
 </dd>
-<dt>max_iter<span class="classifier">int</span></dt><dd><p>max numer of iters</p>
+<dt><strong>bw</strong><span class="classifier">float</span></dt><dd><p>bandwidth of the stein kernel</p>
 </dd>
-<dt>tol<span class="classifier">float</span></dt><dd><p>tolerance for L-BFGS</p>
+<dt><strong>max_iter</strong><span class="classifier">int</span></dt><dd><p>max numer of iters</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float</span></dt><dd><p>tolerance for L-BFGS</p>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt>x: torch.tensor</dt><dd><p>The final positions</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">References</p>
+<p>M.Arbel, A.Korba, A.Salim, A.Gretton. Maximum mean discrepancy
+gradient flow, Neurips, 2020.</p>
 </dd></dl>
 
 </section>
