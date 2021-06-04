@@ -111,7 +111,10 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="ksddescent.svgd">
 <span class="sig-prename descclassname"><span class="pre">ksddescent.</span></span><span class="sig-name descname"><span class="pre">svgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ksddescent.svgd" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Stein Variational Gradient Descent</p>
+<p>Sample by optimization with the
+Stein Variational Gradient Descent</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>x0</strong><span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>initial positions</p>
@@ -124,9 +127,9 @@
 </dd>
 <dt><strong>bw</strong><span class="classifier">float</span></dt><dd><p>bandwidth of the stein kernel</p>
 </dd>
-<dt><strong>store</strong><span class="classifier">bool</span></dt><dd><p>whether to stores the iterates</p>
+<dt><strong>store</strong><span class="classifier">bool</span></dt><dd><p>whether to store the iterates</p>
 </dd>
-<dt><strong>verbose: bool</strong></dt><dd><p>wether to print the current loss</p>
+<dt><strong>verbose: bool</strong></dt><dd><p>whether to print the current loss</p>
 </dd>
 </dl>
 </dd>
