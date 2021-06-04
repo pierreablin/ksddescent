@@ -54,7 +54,7 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
 
     References
     ----------
-    A.Korba, P-C. Aubin, S.Majewski, P.Ablin. Kernel Stein Discrepancy
+    A.Korba, P-C. Aubin-Frankowski, S.Majewski, P.Ablin. Kernel Stein Discrepancy
     Descent, International Conference on Machine Learning, 2021.
     '''
     x = x0.clone().detach()
@@ -137,7 +137,7 @@ def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1.,
 
     References
     ----------
-    A.Korba, P-C. Aubin, S.Majewski, P.Ablin. Kernel Stein Discrepancy
+    A.Korba, P-C. Aubin-Frankowski, S.Majewski, P.Ablin. Kernel Stein Discrepancy
     Descent, International Conference on Machine Learning, 2021.
     '''
     x = x0.clone().detach().numpy()

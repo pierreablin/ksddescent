@@ -43,7 +43,7 @@ Reference
 
 If you use this code in your project, please cite::
 
-    Anna Korba, Pierre-Cyril Aubin, Simon Majewski, Pierre Ablin
+    Anna Korba, Pierre-Cyril Aubin-Frankowski, Simon Majewski, Pierre Ablin
     Kernel Stein Discrepancy Descent
     International Conference on Machine Learning, 2021
 
