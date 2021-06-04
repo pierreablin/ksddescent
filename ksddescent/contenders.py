@@ -6,10 +6,13 @@ from scipy.optimize import fmin_l_bfgs_b
 
 def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
          store=False):
-    '''
+    """Stein Variational Gradient Descent
+
+    Sample by optimization with the
+    Stein Variational Gradient Descent
+
     Parameters
     ----------
-
     x0 : torch.tensor, size n_samples x n_features
         initial positions
 
@@ -26,17 +29,22 @@ def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
         bandwidth of the stein kernel
 
     store : bool
-        whether to stores the iterates
+        whether to store the iterates
 
     verbose: bool
-        wether to print the current loss
+        whether to print the current loss
 
     Returns
     -------
-
     x: torch.tensor
         The final positions
-    '''
+
+    Reference
+    ---------
+    Q. Liu, D. Wang. Stein variational gradient descent: A general
+    purpose Bayesian inference algorithm, Advances In Neural
+    Information Processing Systems, 2370-2378
+    """
     x = x0.detach().clone()
     n_samples, n_features = x.shape
     if store:
@@ -71,7 +79,10 @@ def gaussian_kernel(x, y, sigma):
 
 def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
               store=False):
-    '''
+    '''Sampling by optimization of the MMD
+
+    This uses target samples from a base distribution and
+    returns new samples by minimizing the maximum mean discrepancy.
     Parameters
     ----------
 
