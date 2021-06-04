@@ -189,7 +189,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
@@ -241,10 +241,10 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'ksddescent.tex', u'ksddescent Documentation',
-     u'Pierre Ablin', 'manual'),
-]
+# latex_documents = [
+#     (master_doc, 'ksddescent.tex', u'ksddescent Documentation',
+#      u'Pierre Ablin', 'manual'),
+# ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
@@ -271,10 +271,10 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'ksddescent', u'Ksddescent Documentation',
-     [author], 1)
-]
+# man_pages = [
+#     (master_doc, 'ksddescent', u'Ksddescent Documentation',
+#      [author], 1)
+# ]
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
@@ -285,11 +285,11 @@ man_pages = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'ksddescent', u'ksddescent Documentation',
-     author, 'ksddescent', 'One line description of project.',
-     'Miscellaneous'),
-]
+# texinfosource_documents = [
+#     (master_doc, 'ksddescent', u'ksddescent Documentation',
+#      author, 'ksddescent', 'One line description of project.',
+#      'Miscellaneous'),
+# ]
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
