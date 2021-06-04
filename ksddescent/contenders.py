@@ -86,6 +86,7 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
 
     This uses target samples from a base distribution and
     returns new samples by minimizing the maximum mean discrepancy.
+
     Parameters
     ----------
     x0 : torch.tensor, size n_samples x n_features
