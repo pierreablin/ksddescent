@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 #
-# picard documentation build configuration file, created by
-# sphinx-quickstart on Mon May 23 16:22:52 2016.
-#
 # This file is execfile()d with the current directory set to its
 # containing dir.
 #
