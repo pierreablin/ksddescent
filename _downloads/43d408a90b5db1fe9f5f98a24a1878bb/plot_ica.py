@@ -3,8 +3,12 @@
 Bayesian Independent Component Analysis
 =======================================
 """  # noqa
+
+# Author: Pierre Ablin <pierre.ablin@ens.fr>
+#
+# License: MIT
+
 import torch
-from torch.optim import SGD
 from ksddescent import ksdd_lbfgs
 from ksddescent.contenders import svgd
 import matplotlib.pyplot as plt
@@ -30,6 +34,7 @@ def amari_distance(W, A):
 
     def s(r):
         return np.sum(np.sum(r ** 2, axis=1) / np.max(r ** 2, axis=1) - 1)
+
     return (s(np.abs(P)) + s(np.abs(P.T))) / (2 * P.shape[0])
 
 
@@ -44,11 +49,11 @@ def one_expe(n, p, sigma, bw, n_samples):
         N, _ = w.shape
         w_list = w.reshape(N, p, p)
         z = w_list.matmul(X)
-        psi = torch.tanh(z).matmul(X.t()) / n - torch.inverse(w_list).transpose(-1, -2)
-        sc = - psi - w_list / sigma
+        psi = torch.tanh(z).matmul(X.t()) / n - torch.inverse(
+            w_list
+        ).transpose(-1, -2)
+        sc = -psi - w_list / sigma
         return sc.reshape(N, p ** 2)
-
-
 
     x = torch.randn(n_samples, p ** 2)
     x_final = ksdd_lbfgs(x.clone(), score, bw=bw)
@@ -60,15 +65,24 @@ def one_expe(n, p, sigma, bw, n_samples):
     w_svgd = (x_svgd.reshape(n_samples, p, p)).detach().numpy()
 
     amari_ksd = np.sort([amari_distance(w, A) for w in w_list])
-    amari_svgd  = np.sort([amari_distance(w, A) for w in w_svgd])
-    amari_random = np.sort([amari_distance(np.random.randn(p, p), A) for w in w_svgd])
-    return amari_ksd, amari_svgd, amari_random, score_final, score_svgd, score_random
+    amari_svgd = np.sort([amari_distance(w, A) for w in w_svgd])
+    amari_random = np.sort(
+        [amari_distance(np.random.randn(p, p), A) for w in w_svgd]
+    )
+    return (
+        amari_ksd,
+        amari_svgd,
+        amari_random,
+        score_final,
+        score_svgd,
+        score_random,
+    )
 
 
 p_list = [2]
 n = 1000
 sigma = 1
-bw = .1
+bw = 0.1
 n_samples = 10
 
 n_tries = 3
@@ -83,7 +97,14 @@ for p in p_list:
     score_svgds = []
     score_randoms = []
     for i in range(n_tries):
-        amari_ksd, amari_svgd, amari_random, score_ksd, score_svgd, score_random = one_expe(n, p, sigma, bw, n_samples)
+        (
+            amari_ksd,
+            amari_svgd,
+            amari_random,
+            score_ksd,
+            score_svgd,
+            score_random,
+        ) = one_expe(n, p, sigma, bw, n_samples)
         amari_ksds.append(amari_ksd)
         amari_svgds.append(amari_svgd)
         amari_randoms.append(amari_random)
@@ -92,9 +113,9 @@ for p in p_list:
         score_randoms.append(score_random)
 
 plt.figure()
-plt.plot(np.sort(np.ravel(amari_ksds)), label='ksd')
-plt.plot(np.sort(np.ravel(amari_svgds)), label='svgd')
-plt.plot(np.sort(np.ravel(amari_randoms)), label='random')
-plt.yscale('log')
+plt.plot(np.sort(np.ravel(amari_ksds)), label="ksd")
+plt.plot(np.sort(np.ravel(amari_svgds)), label="svgd")
+plt.plot(np.sort(np.ravel(amari_randoms)), label="random")
+plt.yscale("log")
 plt.legend()
 plt.show()
