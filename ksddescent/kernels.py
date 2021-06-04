@@ -1,3 +1,6 @@
+# Author: Pierre Ablin <pierre.ablin@ens.fr>
+#
+# License: MIT
 import torch
 
 

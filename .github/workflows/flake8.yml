@@ -21,3 +21,4 @@ jobs:
           pip install --upgrade pip
           pip install flake8
           flake8 ksddescent/
+          flake8 examples/

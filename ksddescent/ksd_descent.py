@@ -1,3 +1,6 @@
+# Author: Pierre Ablin <pierre.ablin@ens.fr>
+#
+# License: MIT
 import torch
 import numpy as np
 from .kernels import (imq_kernel, gaussian_stein_kernel_single,
@@ -9,10 +12,13 @@ from time import time
 
 def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
                   store=False, verbose=False, clamp=None, beta=0.2):
-    '''
+    '''Kernel Stein Discrepancy descent with gradient descent
+
+    Perform Kernel Stein Discrepancy descent with gradient descent.
+    Since it uses gradient descent, a step size must be specified.
+
     Parameters
     ----------
-
     x0 : torch.tensor, size n_samples x n_features
         initial positions
 
@@ -40,13 +46,16 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
 
     Returns
     -------
-
     x: torch.tensor
         The final positions
 
     loss_list : list of floats
         List of the loss values during iterations
 
+    Reference
+    ---------
+    A.Korba, P-C. Aubin, S.Majewski, P.Ablin. Kernel Stein Discrepancy
+    Descent, International Conference on Machine Learning, 2021.
     '''
     x = x0.clone().detach()
     n_samples, p = x.shape
@@ -89,10 +98,14 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
 def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1.,
                max_iter=10000, tol=1e-12, beta=.5,
                store=False, verbose=False):
-    '''
+    '''Kernel Stein Discrepancy descent with L-BFGS
+
+    Perform Kernel Stein Discrepancy descent with L-BFGS.
+    L-BFGS is a fast and robust algorithm, that has no
+    critical hyper-parameter.
+
     Parameters
     ----------
-
     x0 : torch.tensor, size n_samples x n_features
         initial positions
 
@@ -117,12 +130,15 @@ def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1.,
     verbose: bool
         wether to print the current loss
 
-
     Returns
     -------
-
     x: torch.tensor
         The final positions
+
+    Reference
+    ---------
+    A.Korba, P-C. Aubin, S.Majewski, P.Ablin. Kernel Stein Discrepancy
+    Descent, International Conference on Machine Learning, 2021.
     '''
     x = x0.clone().detach().numpy()
     n_samples, p = x.shape

@@ -1,3 +1,6 @@
+# Author: Pierre Ablin <pierre.ablin@ens.fr>
+#
+# License: MIT
 import numpy as np
 import torch
 from time import time
