@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Computation times &#8212; ksddescent 0.1dev documentation</title>
+    <title>ksddescent.mmd_lbfgs &#8212; ksddescent 0.1dev documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="index.html">Examples</a></li>
+                <li><a href="../auto_examples/index.html">Examples</a></li>
                 <li><a href="../api.html">API</a></li>
                 <li><a href="https://github.com/pierreablin/ksddescent">GitHub</a></li>
             
@@ -71,7 +71,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Computation times</a></li>
+<li><a class="reference internal" href="#">ksddescent.mmd_lbfgs</a></li>
 </ul>
 </ul>
 </li>
@@ -83,7 +83,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/auto_examples/sg_execution_times.rst.txt"
+  <a href="../_sources/generated/ksddescent.mmd_lbfgs.rst.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -107,46 +107,40 @@
   <div class="row">
     <div class="body col-md-12 content" role="main">
       
-  <section id="computation-times">
-<span id="sphx-glr-auto-examples-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Permalink to this headline">¶</a></h1>
-<p><strong>28:18.294</strong> total execution time for <strong>auto_examples</strong> files:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 9%" />
-<col style="width: 6%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_skewed.html#sphx-glr-auto-examples-plot-skewed-py"><span class="std std-ref">Unbalanced mixture of Gaussian</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_skewed.py</span></code>)</p></td>
-<td><p>23:38.500</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="plot_ica.html#sphx-glr-auto-examples-plot-ica-py"><span class="std std-ref">Bayesian Independent Component Analysis</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_ica.py</span></code>)</p></td>
-<td><p>04:24.171</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_quantitative_expe_gaussian.html#sphx-glr-auto-examples-plot-quantitative-expe-gaussian-py"><span class="std std-ref">Convergence speed of different methods</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_quantitative_expe_gaussian.py</span></code>)</p></td>
-<td><p>00:08.696</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="plot_minima.html#sphx-glr-auto-examples-plot-minima-py"><span class="std std-ref">Structure of the minima of KSD descent</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_minima.py</span></code>)</p></td>
-<td><p>00:02.707</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_simple_gaussian.html#sphx-glr-auto-examples-plot-simple-gaussian-py"><span class="std std-ref">Different algorithms on a Gaussian</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_simple_gaussian.py</span></code>)</p></td>
-<td><p>00:02.328</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="plot_temperature.html#sphx-glr-auto-examples-plot-temperature-py"><span class="std std-ref">Effect of annealing</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_temperature.py</span></code>)</p></td>
-<td><p>00:01.276</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="plot_init.html#sphx-glr-auto-examples-plot-init-py"><span class="std std-ref">Dependence to the initialization</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_init.py</span></code>)</p></td>
-<td><p>00:00.617</p></td>
-<td><p>0.0 MB</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="ksddescent-mmd-lbfgs">
+<h1>ksddescent.mmd_lbfgs<a class="headerlink" href="#ksddescent-mmd-lbfgs" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ksddescent.mmd_lbfgs">
+<span class="sig-prename descclassname"><span class="pre">ksddescent.</span></span><span class="sig-name descname"><span class="pre">mmd_lbfgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ksddescent.mmd_lbfgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sampling by optimization of the MMD</p>
+<p>This uses target samples from a base distribution and
+returns new samples by minimizing the maximum mean discrepancy.
+Parameters
+———-
+x0 : torch.tensor, size n_samples x n_features</p>
+<blockquote>
+<div><p>initial positions</p>
+</div></blockquote>
+<dl class="simple">
+<dt>target_samples<span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>Samples from the target distribution</p>
+</dd>
+<dt>bw<span class="classifier">float</span></dt><dd><p>bandwidth of the stein kernel</p>
+</dd>
+<dt>max_iter<span class="classifier">int</span></dt><dd><p>max numer of iters</p>
+</dd>
+<dt>tol<span class="classifier">float</span></dt><dd><p>tolerance for L-BFGS</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>x: torch.tensor</dt><dd><p>The final positions</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

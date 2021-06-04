@@ -4,12 +4,10 @@
 API Documentation
 =================
 
+Sampling methods
+================
+
 .. currentmodule:: ksddescent
-
-Kernel Stein Discrepancy Descent
-================================
-
-Functions
 
 .. autosummary::
    :toctree: generated/
@@ -17,3 +15,4 @@ Functions
    ksdd_gradient
    ksdd_lbfgs
    svgd
+   mmd_lbfgs

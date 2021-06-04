@@ -22,7 +22,7 @@
 Convergence speed of different methods
 ======================================
 
-.. GENERATED FROM PYTHON SOURCE LINES 6-154
+.. GENERATED FROM PYTHON SOURCE LINES 6-148
 
 
 
@@ -228,7 +228,7 @@ Convergence speed of different methods
     timing = True
 
 
-    f, axes = plt.subplots(1, 2, figsize=(5, 1))
+    f, axes = plt.subplots(1, 2)
 
     for to_plot_dict, title, axe in [
         (kl_dict, "KL", axes[0]),
@@ -253,19 +253,13 @@ Convergence speed of different methods
         y_ = axe.set_ylabel(title)
         axe.grid()
     plt.subplots_adjust(wspace=0.4)
-    l_ = plt.legend(
-        ncol=4,
-        loc=(-1.75, 1.1),
-        columnspacing=0.7,
-        handlelength=1,
-        handletextpad=0.3,
-    )
+    plt.legend()
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.501 seconds)
+   **Total running time of the script:** ( 0 minutes  8.696 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_quantitative_expe_gaussian.py:

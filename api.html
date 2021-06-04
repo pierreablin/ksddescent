@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -73,7 +72,7 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">API Documentation</a><ul>
-<li><a class="reference internal" href="#kernel-stein-discrepancy-descent">Kernel Stein Discrepancy Descent</a></li>
+<li><a class="reference internal" href="#sampling-methods">Sampling methods</a></li>
 </ul>
 </li>
 </ul>
@@ -107,13 +106,14 @@
     </div>
   </div>
 
-<div class="container content-container">
-  
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
   <section id="api-documentation">
 <span id="id1"></span><h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
-<section id="kernel-stein-discrepancy-descent">
-<h2>Kernel Stein Discrepancy Descent<a class="headerlink" href="#kernel-stein-discrepancy-descent" title="Permalink to this headline">¶</a></h2>
-<p>Functions</p>
+<section id="sampling-methods">
+<h2>Sampling methods<a class="headerlink" href="#sampling-methods" title="Permalink to this headline">¶</a></h2>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -129,19 +129,19 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/ksddescent.svgd.html#ksddescent.svgd" title="ksddescent.svgd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">svgd</span></code></a>(x0, score, step[, n_iter, bw, verbose, …])</p></td>
 <td><p>Stein Variational Gradient Descent</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/ksddescent.mmd_lbfgs.html#ksddescent.mmd_lbfgs" title="ksddescent.mmd_lbfgs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mmd_lbfgs</span></code></a>(x0, target_samples[, bw, …])</p></td>
+<td><p>Sampling by optimization of the MMD</p></td>
+</tr>
 </tbody>
 </table>
 </section>
 </section>
 
 
+    </div>
+      
+  </div>
 </div>
-
-<!-- Github "fork me" ribbon -->
-<a href="https://github.com/pierreablin/ksddescent"><img style="position: absolute; top: 50px; right: 0; border: 0;" 
-src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
-alt="Fork me on GitHub"
-data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">

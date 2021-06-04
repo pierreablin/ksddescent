@@ -1,0 +1,6 @@
+﻿ksddescent.mmd\_lbfgs
+=====================
+
+.. currentmodule:: ksddescent
+
+.. autofunction:: mmd_lbfgs

@@ -118,7 +118,7 @@ times_svgds_list = np.array([op[3] for op in outputs]).T
 timing = True
 
 
-f, axes = plt.subplots(1, 2, figsize=(5, 1))
+f, axes = plt.subplots(1, 2)
 
 for to_plot_dict, title, axe in [
     (kl_dict, "KL", axes[0]),
@@ -143,11 +143,5 @@ for to_plot_dict, title, axe in [
     y_ = axe.set_ylabel(title)
     axe.grid()
 plt.subplots_adjust(wspace=0.4)
-l_ = plt.legend(
-    ncol=4,
-    loc=(-1.75, 1.1),
-    columnspacing=0.7,
-    handlelength=1,
-    handletextpad=0.3,
-)
+plt.legend()
 plt.show()
