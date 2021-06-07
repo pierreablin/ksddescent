@@ -7,6 +7,10 @@ The paper is available at `https://arxiv.org/abs/2105.09994 <https://arxiv.org/a
 
 The code uses Pytorch.
 
+.. image:: https://pierreablin.github.io/figures/ksd_descent.png
+    :width: 200
+    :alt: ksd_picture
+
 
 Install
 -------
