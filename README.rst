@@ -8,7 +8,7 @@ The paper is available at `arxiv.org/abs/2105.09994 <https://arxiv.org/abs/2105.
 The code uses Pytorch, and a numpy backend is available for svgd.
 
 
-.. image:: https://pierreablin.github.io/figures/ksd_descent.png
+.. image:: https://pierreablin.github.io/figures/ksd_descent_small.png
     :width: 100
     :alt: ksd_picture
 
