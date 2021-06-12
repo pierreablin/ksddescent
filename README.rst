@@ -9,7 +9,7 @@ The code uses Pytorch, and a numpy backend is available for svgd.
 
 
 .. image:: https://pierreablin.github.io/figures/ksd_descent.png
-    :width: 200
+    :width: 100
     :alt: ksd_picture
 
 
