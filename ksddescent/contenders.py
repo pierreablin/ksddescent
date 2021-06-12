@@ -74,7 +74,7 @@ def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
                         'got {}'.format(x_type))
     if backend not in ['torch', 'numpy', 'auto']:
         raise ValueError('backend must be either numpy or torch, '
-                        'got {}'.format(backend))
+                         'got {}'.format(backend))
     if backend == 'torch' and x_type is np.ndarray:
         raise TypeError('Wrong backend')
     if backend == 'numpy' and x_type is torch.Tensor:

@@ -39,7 +39,10 @@ test-coverage:
 	rm -rf coverage .coverage
 	$(PYTESTS) --cov=ksddescent --cov-report html:coverage
 
-test: test-code test-doc test-manifest
+test-flake:
+	flake8 ksddescent
+
+test: test-code test-doc test-manifest test-flake
 
 trailing-spaces:
 	find . -name "*.py" | xargs perl -pi -e 's/[ \t]*$$//'

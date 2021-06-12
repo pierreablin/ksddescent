@@ -44,7 +44,6 @@ def test_output(backend, input_type, n, p):
 @pytest.mark.parametrize('backend', ['torch', 'numpy'])
 def test_gaussian(backend):
 
-
     def score(x):
         return -x
 
