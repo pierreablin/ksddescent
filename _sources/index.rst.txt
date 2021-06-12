@@ -5,7 +5,7 @@ Sampling by optimization of the Kernel Stein Discrepancy
 
 The paper is available at `https://arxiv.org/abs/2105.09994 <https://arxiv.org/abs/2105.09994>`_.
 
-The code uses Pytorch.
+The code uses Pytorch, and a numpy backend is available for SVGD.
 
 .. image:: https://pierreablin.github.io/figures/ksd_descent.png
     :width: 200

@@ -107,32 +107,45 @@
 <h1>ksddescent.svgd<a class="headerlink" href="#ksddescent-svgd" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ksddescent.svgd">
-<span class="sig-prename descclassname"><span class="pre">ksddescent.</span></span><span class="sig-name descname"><span class="pre">svgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ksddescent.svgd" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ksddescent.</span></span><span class="sig-name descname"><span class="pre">svgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ksddescent.svgd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stein Variational Gradient Descent</p>
 <p>Sample by optimization with the
-Stein Variational Gradient Descent</p>
+Stein Variational Gradient Descent with a Gaussian
+kernel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>x0</strong><span class="classifier">torch.tensor, size n_samples x n_features</span></dt><dd><p>initial positions</p>
+<dt><strong>x0</strong><span class="classifier">torch.tensor or numpy.ndarray, size n_samples x n_features</span></dt><dd><p>initial positions</p>
 </dd>
-<dt><strong>score</strong><span class="classifier">callable</span></dt><dd><p>function that computes the score</p>
+<dt><strong>score</strong><span class="classifier">callable</span></dt><dd><p>function that computes the score. Must be compatible with the
+backend.</p>
 </dd>
 <dt><strong>step</strong><span class="classifier">float</span></dt><dd><p>step size</p>
 </dd>
-<dt><strong>n_iter</strong><span class="classifier">int</span></dt><dd><p>max numer of iters</p>
+<dt><strong>max_iter</strong><span class="classifier">int</span></dt><dd><p>max numer of iters</p>
 </dd>
-<dt><strong>bw</strong><span class="classifier">float</span></dt><dd><p>bandwidth of the stein kernel</p>
+<dt><strong>bw</strong><span class="classifier">float</span></dt><dd><p>bandwidth of the Stein kernel</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float</span></dt><dd><p>tolerance for stopping the algorithm. The
+algorithm stops when the norm of the SVDG direction
+is below tol.</p>
 </dd>
 <dt><strong>store</strong><span class="classifier">bool</span></dt><dd><p>whether to store the iterates</p>
 </dd>
-<dt><strong>verbose: bool</strong></dt><dd><p>whether to print the current loss</p>
+<dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>whether to print the current loss</p>
+</dd>
+<dt><strong>backend</strong><span class="classifier">str, ‘auto’, ‘numpy’ or ‘torch’</span></dt><dd><p>Chooses the backend for the algorithm: numpy or torch.
+If <cite>numpy</cite>, <cite>x0</cite> must be a numpy array and <cite>score</cite> must map
+numpy array to numpy array.
+If <cite>torch</cite>, <cite>x0</cite> must be a torch tensor and <cite>score</cite> must map
+torch tensor to torch tensor.
+If <cite>auto</cite>, the backend is infered from the type of <cite>x0</cite>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>x: torch.tensor</dt><dd><p>The final positions</p>
+<dt>x: torch.tensor or np.ndarray</dt><dd><p>The final positions</p>
 </dd>
 </dl>
 </dd>

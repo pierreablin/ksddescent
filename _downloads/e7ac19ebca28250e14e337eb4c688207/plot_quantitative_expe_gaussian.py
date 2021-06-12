@@ -56,7 +56,7 @@ p = 1
 
 def one_expe(n_samples, bw, step_svgd, step_mmd):
     x = 0.1 * torch.randn(n_samples, p) + torch.randn(p)
-    n_iters = 1000
+    max_iter = 1000
     max_iter = 1000
     t0 = time()
     ksdd_lbfgs(x, score, bw=bw, kernel="gaussian", max_iter=max_iter)
@@ -69,11 +69,11 @@ def one_expe(n_samples, bw, step_svgd, step_mmd):
     for step in step_svgd:
         print(step)
         t0 = time()
-        svgd(x, score, step, n_iter=n_iters, bw=bw, verbose=True)
+        svgd(x, score, step, max_iter=max_iter, bw=bw, verbose=True)
         t_svgd = time() - t0
         t_svgds.append(t_svgd)
         _, traj_svgd, _ = svgd(
-            x, score, step, n_iter=n_iters, bw=bw, store=True
+            x, score, step, max_iter=max_iter, bw=bw, store=True
         )
         traj_svgds.append(traj_svgd)
     true_samples = sampler(10000)
