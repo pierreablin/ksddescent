@@ -57,7 +57,7 @@ def one_expe(n, p, sigma, bw, n_samples):
 
     x = torch.randn(n_samples, p ** 2)
     x_final = ksdd_lbfgs(x.clone(), score, bw=bw)
-    x_svgd = svgd(x.clone(), score, 0.1, bw=bw, n_iter=3000)
+    x_svgd = svgd(x.clone(), score, 0.1, bw=bw, max_iter=3000)
     score_svgd = torch.norm(score(x_svgd)).item()
     score_final = torch.norm(score(x_final)).item()
     score_random = torch.norm(score(x)).item()
