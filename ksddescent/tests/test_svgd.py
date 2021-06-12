@@ -41,15 +41,21 @@ def test_output(backend, input_type, n, p):
         assert output.requires_grad is False
 
 
-def test_gaussian():
-    torch.manual_seed(0)
+@pytest.mark.parametrize('backend', ['torch', 'numpy'])
+def test_gaussian(backend):
+
 
     def score(x):
         return -x
 
     max_iter = 1000
     n, p = 100, 1
-    x = torch.rand(n, p)
+    if backend == 'torch':
+        torch.manual_seed(0)
+        x = torch.rand(n, p)
+    else:
+        rng = np.random.RandomState(0)
+        x = rng.randn(n, p)
     step = 1.0
     output = svgd(x, score, step, max_iter=max_iter)
     assert np.abs(kurtosis(output[:, 0])) < 0.1
