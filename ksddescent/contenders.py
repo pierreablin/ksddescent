@@ -8,7 +8,7 @@ from scipy.optimize import fmin_l_bfgs_b
 
 
 def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
-         store=False):
+         store=False, backend='auto'):
     """Stein Variational Gradient Descent
 
     Sample by optimization with the
@@ -17,11 +17,12 @@ def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
 
     Parameters
     ----------
-    x0 : torch.tensor, size n_samples x n_features
+    x0 : torch.tensor or numpy.ndarray, size n_samples x n_features
         initial positions
 
     score : callable
-        function that computes the score
+        function that computes the score. Must be compatible with the
+        backend.
 
     step : float
         step size
@@ -40,12 +41,20 @@ def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
     store : bool
         whether to store the iterates
 
-    verbose: bool
+    verbose : bool
         whether to print the current loss
+
+    backend : str, 'auto', 'numpy' or 'torch'
+        Chooses the backend for the algorithm: numpy or torch.
+        If `numpy`, `x0` must be a numpy array and `score` must map
+        numpy array to numpy array.
+        If `torch`, `x0` must be a torch tensor and `score` must map
+        torch tensor to torch tensor.
+        If `auto`, the backend is infered from the type of `x0`.
 
     Returns
     -------
-    x: torch.tensor
+    x: torch.tensor or np.ndarray
         The final positions
 
     References
@@ -54,7 +63,26 @@ def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
     purpose Bayesian inference algorithm, Advances In Neural
     Information Processing Systems, 2370-2378
     """
-    x = x0.detach().clone()
+    x_type = type(x0)
+    if backend == 'auto':
+        if x_type is np.ndarray:
+            backend = 'numpy'
+        elif x_type is torch.Tensor:
+            backend = 'torch'
+    if x_type not in [torch.Tensor, np.ndarray]:
+        raise TypeError('x0 must be either numpy.ndarray or torch.Tensor '
+                        'got {}'.format(x_type))
+    if backend not in ['torch', 'numpy', 'auto']:
+        raise ValueError('backend must be either numpy or torch, '
+                        'got {}'.format(backend))
+    if backend == 'torch' and x_type is np.ndarray:
+        raise TypeError('Wrong backend')
+    if backend == 'numpy' and x_type is torch.Tensor:
+        raise TypeError('Wrong backend')
+    if backend == 'torch':
+        x = x0.detach().clone()
+    else:
+        x = np.copy(x0)
     n_samples, n_features = x.shape
     if store:
         storage = []
@@ -62,24 +90,35 @@ def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
         t0 = time()
     for i in range(max_iter):
         if store:
-            storage.append(x.clone())
+            if backend == 'torch':
+                storage.append(x.clone())
+            else:
+                storage.append(x.copy())
             timer.append(time() - t0)
         d = (x[:, None, :] - x[None, :, :])
         dists = (d ** 2).sum(axis=-1)
-        k = torch.exp(- dists / bw / 2)
+
+        if backend == 'torch':
+            k = torch.exp(- dists / bw / 2)
+        else:
+            k = np.exp(- dists / bw / 2)
         k_der = d * k[:, :, None] / bw
         scores_x = score(x)
-        ks = k.mm(scores_x)
-        kd = k_der.sum(dim=0)
+
+        if backend == 'torch':
+            ks = k.mm(scores_x)
+        else:
+            ks = k.dot(scores_x)
+        kd = k_der.sum(axis=0)
         direction = (ks - kd) / n_samples
 
-        criterion = torch.sqrt((direction ** 2).sum())
-        if criterion < tol:
+        criterion = (direction ** 2).sum()
+        if criterion < tol ** 2:
             break
-    
+
         x += step * direction
         if verbose and i % 100 == 0:
-            print(i, torch.norm(direction).item())
+            print(i, criterion)
     if store:
         return x, storage, timer
     return x
