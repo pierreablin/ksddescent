@@ -7,12 +7,13 @@ from time import time
 from scipy.optimize import fmin_l_bfgs_b
 
 
-def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
+def svgd(x0, score, step, max_iter=1000, bw=1, tol=1e-5, verbose=False,
          store=False):
     """Stein Variational Gradient Descent
 
     Sample by optimization with the
-    Stein Variational Gradient Descent
+    Stein Variational Gradient Descent with a Gaussian
+    kernel.
 
     Parameters
     ----------
@@ -25,11 +26,16 @@ def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
     step : float
         step size
 
-    n_iter : int
+    max_iter : int
         max numer of iters
 
     bw : float
-        bandwidth of the stein kernel
+        bandwidth of the Stein kernel
+
+    tol : float
+        tolerance for stopping the algorithm. The
+        algorithm stops when the norm of the SVDG direction
+        is below tol.
 
     store : bool
         whether to store the iterates
@@ -54,7 +60,7 @@ def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
         storage = []
         timer = []
         t0 = time()
-    for i in range(n_iter):
+    for i in range(max_iter):
         if store:
             storage.append(x.clone())
             timer.append(time() - t0)
@@ -66,6 +72,11 @@ def svgd(x0, score, step, n_iter=1000, bw=1, verbose=False,
         ks = k.mm(scores_x)
         kd = k_der.sum(dim=0)
         direction = (ks - kd) / n_samples
+
+        criterion = torch.sqrt((direction ** 2).sum())
+        if criterion < tol:
+            break
+    
         x += step * direction
         if verbose and i % 100 == 0:
             print(i, torch.norm(direction).item())
@@ -80,7 +91,7 @@ def gaussian_kernel(x, y, sigma):
     return torch.exp(- dists / sigma / 2)
 
 
-def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-12,
+def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-5,
               store=False):
     '''Sampling by optimization of the MMD
 

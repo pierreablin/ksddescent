@@ -46,7 +46,7 @@ def ksdd_gradient(x0, score, step, kernel='gaussian', max_iter=1000, bw=1,
 
     Returns
     -------
-    x: torch.tensor
+    x: torch.tensor, size n_samples x n_features
         The final positions
 
     loss_list : list of floats
@@ -133,7 +133,7 @@ def ksdd_lbfgs(x0, score, kernel='gaussian', bw=1.,
 
     Returns
     -------
-    x: torch.tensor
+    x: torch.tensor, size n_samples x n_features
         The final positions
 
     References
