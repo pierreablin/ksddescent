@@ -6,6 +6,9 @@ Kernel Stein Discrepancy Descent
 .. _GHActions: https://github.com/pierreablin/ksddescent/actions
 
 
+.. |PyPI| image:: https://badge.fury.io/py/ksddescent.svg
+.. _PyPI: https://badge.fury.io/py/ksddescent
+
 Sampling by optimization of the Kernel Stein Discrepancy
 
 The paper is available at `arxiv.org/abs/2105.09994 <https://arxiv.org/abs/2105.09994>`_.
