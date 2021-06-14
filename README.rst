@@ -1,6 +1,7 @@
 Kernel Stein Discrepancy Descent
 ================================
 
+|GHActions|_ |PyPI|_ 
 
 .. |GHActions| image:: https://github.com/pierreablin/ksddescent/workflows/unittests/badge.svg?branch=main&event=push
 .. _GHActions: https://github.com/pierreablin/ksddescent/actions
