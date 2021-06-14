@@ -12,6 +12,8 @@ The code uses Pytorch, and a numpy backend is available for SVGD.
     :alt: ksd_picture
 
 
+The package also contains the code for the celebrated Stein Variational Gradient Descent algorithm and Maximum Mean Discrepancy gradient flow.
+
 Install
 -------
 
