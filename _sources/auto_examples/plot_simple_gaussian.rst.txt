@@ -60,17 +60,17 @@ Different algorithms on a Gaussian
 
  .. code-block:: none
 
-    0 tensor(309.6136)
-    100 tensor(5.8867e-05)
-    200 tensor(2.6526e-05)
-    300 tensor(1.1828e-05)
-    400 tensor(3.8252e-06)
-    500 tensor(2.2470e-06)
-    600 tensor(1.4562e-06)
-    700 tensor(9.5174e-07)
-    800 tensor(6.1511e-07)
-    900 tensor(3.9714e-07)
-    Took 0.31 sec, 184 iterations, loss = 6.00e+03
+    0 tensor(350.2530)
+    100 tensor(2.1757e-05)
+    200 tensor(9.5690e-06)
+    300 tensor(5.7472e-06)
+    400 tensor(3.4608e-06)
+    500 tensor(2.1607e-06)
+    600 tensor(1.3823e-06)
+    700 tensor(8.9912e-07)
+    800 tensor(5.8443e-07)
+    900 tensor(3.7005e-07)
+    Took 0.24 sec, 135 iterations, loss = 5.38e+03
 
 
 
@@ -174,7 +174,7 @@ Different algorithms on a Gaussian
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.940 seconds)
+   **Total running time of the script:** ( 0 minutes  1.802 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_simple_gaussian.py:
