@@ -1,6 +1,11 @@
 Kernel Stein Discrepancy Descent
 ================================
 
+
+.. |GHActions| image:: https://github.com/pierreablin/ksddescent/workflows/unittests/badge.svg?branch=main&event=push
+.. _GHActions: https://github.com/pierreablin/ksddescent/actions
+
+
 Sampling by optimization of the Kernel Stein Discrepancy
 
 The paper is available at `arxiv.org/abs/2105.09994 <https://arxiv.org/abs/2105.09994>`_.
