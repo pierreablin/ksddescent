@@ -25,7 +25,7 @@ def potential(x):
 
 
 def sampler(n_points):
-    return math.sqrt(0.3) * torch.randn(n_points, 1)
+    return math.sqrt(0.3) * torch.randn(n_points, 2)
 
 
 n_samples = 50
