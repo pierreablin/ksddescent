@@ -25,7 +25,7 @@ def potential(x):
 
 
 def sampler(n_points):
-    return math.sqrt(0.3) * torch.randn(n_points, 1)
+    return math.sqrt(0.3) * torch.randn(n_points, 2)
 
 
 n_samples = 50
@@ -43,7 +43,7 @@ x_svgd, svgd_traj, _ = svgd(
 )
 
 x_mmd, mmd_traj, _ = mmd_lbfgs(
-    x.clone(), sampler(3 * n_samples), bw=bw, store=True
+    x.clone(), sampler(100 * n_samples), bw=bw, store=True
 )
 
 labels = ["KSD L-BFGS", "KSD Grad", "SVGD", "MMD"]

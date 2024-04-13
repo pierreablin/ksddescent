@@ -166,7 +166,7 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-5,
     '''
     x = x0.clone().detach().numpy()
     n_samples, p = x.shape
-    k_yy = gaussian_kernel(target_samples, target_samples, bw).sum().item()
+    k_yy = gaussian_kernel(target_samples, target_samples, bw).mean().item()
     if store:
         class callback_store():
             def __init__(self):
@@ -191,8 +191,8 @@ def mmd_lbfgs(x0, target_samples, bw=1, max_iter=10000, tol=1e-5,
         x_numpy = x_numpy.reshape(n_samples, p)
         x = torch.tensor(x_numpy, dtype=torch.float32)
         x.requires_grad = True
-        k_xx = gaussian_kernel(x, x, bw).sum()
-        k_xy = gaussian_kernel(x, target_samples, bw).sum()
+        k_xx = gaussian_kernel(x, x, bw).mean()
+        k_xy = gaussian_kernel(x, target_samples, bw).mean()
         loss = k_xx - 2 * k_xy + k_yy
         loss.backward()
         grad = x.grad
